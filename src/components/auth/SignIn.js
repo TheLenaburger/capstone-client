@@ -11,6 +11,7 @@ const SignIn = ({ msgAlert, setUser }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [shouldNavigate, setShouldNavigate] = useState(false)
+  const [newUser, setNewUser] = useState(false)
 
   const onSignIn = async (event) => {
     event.preventDefault()
@@ -38,6 +39,10 @@ const SignIn = ({ msgAlert, setUser }) => {
 
   if (shouldNavigate) {
     return <Navigate to='/' />
+  }
+
+  if (newUser) {
+    return <Navigate to='/sign-up' />
   }
 
   return (
@@ -70,6 +75,8 @@ const SignIn = ({ msgAlert, setUser }) => {
           </Form.Group>
           <Button className='mt-2' variant='primary' type='submit'>Submit</Button>
         </Form>
+        <br />
+        <div style={{ userSelect: 'none' }}>First time here? <span style={{ color: 'blue', cursor: 'pointer' }} onClick={() => setNewUser(true)}>Sign Up!</span></div>
       </div>
     </div>
   )

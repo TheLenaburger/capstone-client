@@ -5,10 +5,12 @@ import { v4 as uuid } from 'uuid'
 
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
+import Home from './components/Home'
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import Questions from './components/questions/questions'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -36,6 +38,10 @@ const App = () => {
       <main className='container'>
         <Routes>
           <Route
+            path='/'
+            element={<Home user={user} />}
+          />
+          <Route
             path='/sign-up'
             element={<SignUp msgAlert={msgAlert} setUser={setUser} /> }
           />
@@ -51,7 +57,10 @@ const App = () => {
             path='/change-password'
             element={<ChangePassword msgAlert={msgAlert} user={user} /> }
           />
-
+          <Route
+            path='/questions'
+            element={<Questions msgAlert={msgAlert} user={user} />}
+          />
         </Routes>
       </main>
     </>
