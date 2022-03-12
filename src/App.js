@@ -11,6 +11,9 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import Questions from './components/questions/questions'
+import OneQuestion from './components/questions/oneQuestion'
+import EditQuestion from './components/questions/editQuestion'
+import CreateQuestion from './components/questions/createQuestion'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -60,6 +63,18 @@ const App = () => {
           <Route
             path='/questions'
             element={<Questions msgAlert={msgAlert} user={user} />}
+          />
+          <Route
+            path='/questions/create'
+            element={<CreateQuestion msgAlert={msgAlert} user={user} />}
+          />
+          <Route
+            path='/questions/:id'
+            element={<OneQuestion msgAlert={msgAlert} user={user} />}
+          />
+          <Route
+            path='/questions/:id/edit'
+            element={<EditQuestion msgAlert={msgAlert} user={user} />}
           />
         </Routes>
       </main>

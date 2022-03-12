@@ -11,7 +11,7 @@ export const getOneQuestion = (user, id) => {
 
 export const createQuestion = (user, title, body) => {
   return axios.post(
-    `${apiUrl}/questions/`,
+    `${apiUrl}/questions/create/`,
     {
       question: {
         title,
@@ -27,9 +27,14 @@ export const createQuestion = (user, title, body) => {
   )
 }
 
-export const showAllQuestions = () => {
+export const showAllQuestions = (user) => {
   return axios.get(
-    `${apiUrl}/questions/`
+    `${apiUrl}/questions/`,
+    {
+      headers: {
+        Authorization: `Token ${user.token}`
+      }
+    }
   )
 }
 
@@ -53,7 +58,7 @@ export const updateQuestion = (title, body, user, id) => {
 
 export const deleteQuestion = (user, id) => {
   return axios.delete(
-    `${apiUrl}/questions/${id}`,
+    `${apiUrl}/questions/${id}/`,
     {
       headers: {
         Authorization: `Token ${user.token}`

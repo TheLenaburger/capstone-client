@@ -5,6 +5,7 @@ export const signInFailure = 'Failed to sign in. Check your email and password a
 export const signOutSuccess = 'Come back soon!'
 export const changePasswordSuccess = 'Password changed successfully!'
 export const changePasswordFailure = 'Failed to change passwords. Check your old password and try again.'
+export const showAllQuestionsFailure = 'Where did all our questions go? Try again later.'
 export const getOneQuestionFailure = 'Couldn\'t find that question. Please try again.'
 export const deleteQuestionSuccess = 'Question deleted successfully.'
 export const deleteQuestionFailure = 'Aw beans, that didn\'t work. Try again in a moment.'

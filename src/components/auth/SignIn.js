@@ -47,7 +47,7 @@ const SignIn = ({ msgAlert, setUser }) => {
 
   return (
     <div className='row'>
-      <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+      <div className='form-bg-style col-sm-10 col-md-8 mx-auto mt-5'>
         <h3>Sign In</h3>
         <Form onSubmit={onSignIn}>
           <Form.Group controlId='email'>
@@ -76,7 +76,7 @@ const SignIn = ({ msgAlert, setUser }) => {
           <Button className='mt-2' variant='primary' type='submit'>Submit</Button>
         </Form>
         <br />
-        <div style={{ userSelect: 'none' }}>First time here? <span style={{ color: 'blue', cursor: 'pointer' }} onClick={() => setNewUser(true)}>Sign Up!</span></div>
+        <div style={{ userSelect: 'none' }}>First time here? <span style={{ color: 'blue', cursor: 'pointer' }} onClick={() => setNewUser(true)}>Sign Up Here!</span></div>
       </div>
     </div>
   )
